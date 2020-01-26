@@ -19,7 +19,7 @@
 .btn-clipboard {
   position: absolute;
   top: .5rem;
-  right: .5rem;
+  @include rtlize('end', .5rem);
   z-index: 10;
   display: block;
   padding: .25rem .5rem;

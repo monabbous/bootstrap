@@ -82,8 +82,8 @@
     width: $form-range-thumb-width;
     height: $form-range-thumb-height;
     margin-top: 0; // Edge specific
-    margin-right: $form-range-thumb-focus-box-shadow-width; // Workaround that overflowed box-shadow is hidden.
-    margin-left: $form-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
+    @include rtlize('margin-end', $form-range-thumb-focus-box-shadow-width); // Workaround that overflowed box-shadow is hidden.
+    @include rtlize('margin-start', $form-range-thumb-focus-box-shadow-width);  // Workaround that overflowed box-shadow is hidden.
     @include gradient-bg($form-range-thumb-bg);
     border: $form-range-thumb-border;
     @include border-radius($form-range-thumb-border-radius);
@@ -113,7 +113,7 @@
   }
 
   &::-ms-fill-upper {
-    margin-right: 15px; // arbitrary?
+    @include rtlize('margin-end', 15px); // arbitrary?
     background-color: $form-range-track-bg;
     @include border-radius($form-range-track-border-radius);
   }

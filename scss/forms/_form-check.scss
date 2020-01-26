@@ -5,12 +5,12 @@
 .form-check {
   display: block;
   min-height: $form-check-min-height;
-  padding-left: $form-check-padding-left;
+  @include rtlize('padding-start', $form-check-padding-left);
   margin-bottom: $form-check-margin-bottom;
 
   .form-check-input {
     float: left;
-    margin-left: $form-check-padding-left * -1;
+    @include rtlize('margin-start', $form-check-padding-left * -1);
   }
 }
 
@@ -108,11 +108,11 @@
 //
 
 .form-switch {
-  padding-left: $form-switch-padding-left;
+  @include rtlize('padding-start', $form-switch-padding-left);
 
   .form-check-input {
     width: $form-switch-width;
-    margin-left: $form-switch-padding-left * -1;
+    @include rtlize('margin-start', $form-switch-padding-left * -1);
     background-image: escape-svg($form-switch-bg-image);
     background-repeat: no-repeat;
     background-position: left center;
@@ -142,5 +142,5 @@
 
 .form-check-inline {
   display: inline-block;
-  margin-right: $form-check-inline-margin-right;
+  @include rtlize('margin-end', $form-check-inline-margin-right);
 }

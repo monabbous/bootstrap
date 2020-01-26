@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 // Container widths
 //
 // Set the container width, and override it for fixed navbars in media queries.
@@ -57,13 +59,13 @@
   // Remove the negative margin from default .row, then the horizontal padding
   // from all immediate children columns (to prevent runaway style inheritance).
   .no-gutters {
-    margin-right: 0;
-    margin-left: 0;
+    @include rtlize('margin-end', 0);
+    @include rtlize('margin-start', 0);
 
     > .col,
     > [class*="col-"] {
-      padding-right: 0;
-      padding-left: 0;
+      @include rtlize('padding-end', 0);
+      @include rtlize('padding-start', 0);
     }
   }
 }

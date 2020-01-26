@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 // stylelint-disable at-rule-no-vendor-prefix, declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
 
 // Reboot
@@ -161,7 +163,7 @@ address {
 
 ol,
 ul {
-  padding-left: 2rem;
+  @include rtlize('padding-start', 2rem);
 }
 
 ol,
@@ -186,7 +188,7 @@ dt {
 
 dd {
   margin-bottom: .5rem;
-  margin-left: 0; // 1
+  @include rtlize('margin-start', 0); // 1
 }
 
 blockquote {

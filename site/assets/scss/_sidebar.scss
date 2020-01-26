@@ -39,7 +39,7 @@
 .bd-sidenav-group {
   &.has-children .bd-sidenav-group-link::before {
     display: inline-block;
-    margin-right: .25rem;
+    @include rtlize('margin-end', .25rem);
     line-height: 0; // Align in the middle
     content: escape-svg($sidebar-collapse-icon);
   }
@@ -57,7 +57,7 @@
 
 // All levels of nav
 .bd-sidebar .nav {
-  padding-left: 1.25rem;
+  @include rtlize('padding-start', 1.25rem);
 
   > li > a {
     display: inline-block;

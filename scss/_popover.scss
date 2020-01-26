@@ -1,7 +1,9 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 .popover {
   position: absolute;
   top: 0;
-  left: 0;
+  @include rtlize('start', 0);
   z-index: $zindex-popover;
   display: block;
   max-width: $popover-max-width;
@@ -56,22 +58,22 @@
 }
 
 .bs-popover-right {
-  margin-left: $popover-arrow-height;
+  @include rtlize('margin-start', $popover-arrow-height);
 
   > .popover-arrow {
-    left: subtract(-$popover-arrow-height, $popover-border-width);
+    @include rtlize('start', subtract(-$popover-arrow-height, $popover-border-width));
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0; // make sure the arrow does not touch the popover's rounded corners
 
     &::before {
-      left: 0;
+      @include rtlize('start', 0);
       border-width: ($popover-arrow-width / 2) $popover-arrow-height ($popover-arrow-width / 2) 0;
       border-right-color: $popover-arrow-outer-color;
     }
 
     &::after {
-      left: $popover-border-width;
+      @include rtlize('start', $popover-border-width);
       border-width: ($popover-arrow-width / 2) $popover-arrow-height ($popover-arrow-width / 2) 0;
       border-right-color: $popover-arrow-color;
     }
@@ -101,32 +103,32 @@
   .popover-header::before {
     position: absolute;
     top: 0;
-    left: 50%;
+    @include rtlize('start', 50%);
     display: block;
     width: $popover-arrow-width;
-    margin-left: -$popover-arrow-width / 2;
+    @include rtlize('margin-start', -$popover-arrow-width / 2);
     content: "";
     border-bottom: $popover-border-width solid $popover-header-bg;
   }
 }
 
 .bs-popover-left {
-  margin-right: $popover-arrow-height;
+  @include rtlize('margin-end', $popover-arrow-height);
 
   > .popover-arrow {
-    right: subtract(-$popover-arrow-height, $popover-border-width);
+    @include rtlize('end', subtract(-$popover-arrow-height, $popover-border-width));
     width: $popover-arrow-height;
     height: $popover-arrow-width;
     margin: $popover-border-radius 0; // make sure the arrow does not touch the popover's rounded corners
 
     &::before {
-      right: 0;
+      @include rtlize('end', 0);
       border-width: ($popover-arrow-width / 2) 0 ($popover-arrow-width / 2) $popover-arrow-height;
       border-left-color: $popover-arrow-outer-color;
     }
 
     &::after {
-      right: $popover-border-width;
+      @include rtlize('end', $popover-border-width);
       border-width: ($popover-arrow-width / 2) 0 ($popover-arrow-width / 2) $popover-arrow-height;
       border-left-color: $popover-arrow-color;
     }

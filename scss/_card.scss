@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 //
 // Base styles
 //
@@ -15,8 +17,8 @@
   @include border-radius($card-border-radius);
 
   > hr {
-    margin-right: 0;
-    margin-left: 0;
+    @include rtlize('margin-end', 0);
+    @include rtlize('margin-start', 0);
   }
 
   > .list-group:first-child {
@@ -62,7 +64,7 @@
   }
 
   + .card-link {
-    margin-left: $card-spacer-x;
+    @include rtlize('margin-start', $card-spacer-x);
   }
 }
 
@@ -104,9 +106,9 @@
 //
 
 .card-header-tabs {
-  margin-right: -$card-cap-padding-x / 2;
+  @include rtlize('margin-end', -$card-cap-padding-x / 2);
   margin-bottom: -$card-cap-padding-y;
-  margin-left: -$card-cap-padding-x / 2;
+  @include rtlize('margin-start', -$card-cap-padding-x / 2);
   border-bottom: 0;
 
   @if $nav-tabs-link-active-bg != $card-bg {
@@ -118,17 +120,17 @@
 }
 
 .card-header-pills {
-  margin-right: -$card-cap-padding-x / 2;
-  margin-left: -$card-cap-padding-x / 2;
+  @include rtlize('margin-end', -$card-cap-padding-x / 2);
+  @include rtlize('margin-start', -$card-cap-padding-x / 2);
 }
 
 // Card image
 .card-img-overlay {
   position: absolute;
   top: 0;
-  right: 0;
+  @include rtlize('end', 0);
   bottom: 0;
-  left: 0;
+  @include rtlize('start', 0);
   padding: $card-img-overlay-padding;
 }
 
@@ -160,15 +162,15 @@
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    margin-right: -$card-deck-margin;
-    margin-left: -$card-deck-margin;
+    @include rtlize('margin-end', -$card-deck-margin);
+    @include rtlize('margin-start', -$card-deck-margin);
 
     .card {
       // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
       flex: 1 0 0%;
-      margin-right: $card-deck-margin;
+      @include rtlize('margin-end', $card-deck-margin);
       margin-bottom: 0; // Override the default
-      margin-left: $card-deck-margin;
+      @include rtlize('margin-start', $card-deck-margin);
     }
   }
 }
@@ -196,8 +198,8 @@
       margin-bottom: 0;
 
       + .card {
-        margin-left: 0;
-        border-left: 0;
+        @include rtlize('margin-start', 0);
+        @include rtlize('border-start', 0);
       }
 
       // Handle rounded corners

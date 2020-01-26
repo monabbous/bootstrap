@@ -1,6 +1,8 @@
 //
 // Headings
 //
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 .h1 {
   @extend h1;
 }
@@ -80,7 +82,7 @@
   display: inline-block;
 
   &:not(:last-child) {
-    margin-right: $list-inline-padding;
+    @include rtlize('margin-end', $list-inline-padding);
   }
 }
 

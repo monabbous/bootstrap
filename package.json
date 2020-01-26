@@ -86,7 +86,9 @@
     "type": "opencollective",
     "url": "https://opencollective.com/bootstrap"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rtlize": "^1.0.0"
+  },
   "peerDependencies": {
     "popper.js": "^1.16.0"
   },

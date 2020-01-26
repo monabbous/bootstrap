@@ -38,8 +38,8 @@
 .form-file-label {
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
+  @include rtlize('end', 0);
+  @include rtlize('start', 0);
   z-index: 1;
   display: flex;
   height: $form-file-height;
@@ -70,7 +70,7 @@
   display: block;
   flex-shrink: 0;
   padding: $form-file-padding-y $form-file-padding-x;
-  margin-left: -$form-file-border-width;
+  @include rtlize('margin-start', -$form-file-border-width);
   line-height: $form-file-line-height;
   color: $form-file-button-color;
   @include gradient-bg($form-file-button-bg);

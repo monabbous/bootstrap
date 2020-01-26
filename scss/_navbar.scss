@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 // Contents
 //
 // Navbar
@@ -21,9 +23,9 @@
   align-items: center;
   justify-content: space-between; // space out brand from logo
   padding-top: $navbar-padding-y;
-  padding-right: $navbar-padding-x; // default: null
+  @include rtlize('padding-end', $navbar-padding-x); // default: null
   padding-bottom: $navbar-padding-y;
-  padding-left: $navbar-padding-x; // default: null
+  @include rtlize('padding-start', $navbar-padding-x); // default: null
 
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
@@ -55,7 +57,7 @@
 .navbar-brand {
   padding-top: $navbar-brand-padding-y;
   padding-bottom: $navbar-brand-padding-y;
-  margin-right: $navbar-brand-margin-right;
+  @include rtlize('margin-end', $navbar-brand-margin-right);
   @include font-size($navbar-brand-font-size);
   white-space: nowrap;
 
@@ -73,13 +75,13 @@
 .navbar-nav {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-  padding-left: 0;
+  @include rtlize('padding-start', 0);
   margin-bottom: 0;
   list-style: none;
 
   .nav-link {
-    padding-right: 0;
-    padding-left: 0;
+    @include rtlize('padding-end', 0);
+    @include rtlize('padding-start', 0);
   }
 
   .dropdown-menu {
@@ -160,8 +162,8 @@
           }
 
           .nav-link {
-            padding-right: $navbar-nav-link-padding-x;
-            padding-left: $navbar-nav-link-padding-x;
+            @include rtlize('padding-end', $navbar-nav-link-padding-x);
+            @include rtlize('padding-start', $navbar-nav-link-padding-x);
           }
         }
 

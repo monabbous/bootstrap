@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 // Base class
 //
 // Kickstart any navigation component with a set of style resets. Works with
@@ -6,7 +8,7 @@
 .nav {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 0;
+  @include rtlize('padding-start', 0);
   margin-bottom: 0;
   list-style: none;
 }

@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 // .modal-open      - body class for killing the scroll
 // .modal           - container to scroll within
 // .modal-dialog    - positioning shell for the actual modal
@@ -18,7 +20,7 @@
 .modal {
   position: fixed;
   top: 0;
-  left: 0;
+  @include rtlize('start', 0);
   z-index: $zindex-modal;
   display: none;
   width: 100%;
@@ -124,7 +126,7 @@
 .modal-backdrop {
   position: fixed;
   top: 0;
-  left: 0;
+  @include rtlize('start', 0);
   z-index: $zindex-modal-backdrop;
   width: 100vw;
   height: 100vh;

@@ -29,7 +29,7 @@
 
 .carbon-img {
   float: left;
-  margin-left: -145px;
+  @include rtlize('margin-start', -145px);
 }
 
 .carbon-poweredby {

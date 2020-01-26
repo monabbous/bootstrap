@@ -23,7 +23,7 @@
     + .form-control,
     + .form-select,
     + .form-file {
-      margin-left: -$input-border-width;
+      @include rtlize('margin-start', -$input-border-width);
     }
   }
 
@@ -83,7 +83,7 @@
   .btn + .input-group-text,
   .input-group-text + .input-group-text,
   .input-group-text + .btn {
-    margin-left: -$input-border-width;
+    @include rtlize('margin-start', -$input-border-width);
   }
 }
 
@@ -158,7 +158,7 @@
 
 .input-group-lg > .form-select,
 .input-group-sm > .form-select {
-  padding-right: $form-select-padding-x + $form-select-indicator-padding;
+  @include rtlize('padding-end', $form-select-padding-x + $form-select-indicator-padding);
 }
 
 

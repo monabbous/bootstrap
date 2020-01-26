@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 .pagination {
   display: flex;
   @include list-unstyled();
@@ -27,7 +29,7 @@
 
 .page-item {
   &:not(:first-child) .page-link {
-    margin-left: $pagination-margin-left;
+    @include rtlize('margin-start', $pagination-margin-left);
   }
 
   &.active .page-link {

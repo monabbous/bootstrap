@@ -24,7 +24,7 @@
   @include media-breakpoint-up(md) {
     + .bd-brand-item {
       border-top: 0;
-      border-left: 1px solid $white;
+      @include rtlize('border-start', 1px solid $white);
     }
   }
 }
@@ -56,8 +56,8 @@
 .color-swatch {
   width: 4rem;
   height: 4rem;
-  margin-right: .25rem;
-  margin-left: .25rem;
+  @include rtlize('margin-end', .25rem);
+  @include rtlize('margin-start', .25rem);
   @include border-radius();
 
   @include media-breakpoint-up(md) {

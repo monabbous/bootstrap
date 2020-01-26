@@ -6,13 +6,13 @@
   .form-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -$form-grid-gutter-width / 2;
-    margin-left: -$form-grid-gutter-width / 2;
+    @include rtlize('margin-end', -$form-grid-gutter-width / 2);
+    @include rtlize('margin-start', -$form-grid-gutter-width / 2);
 
     > .col,
     > [class*="col-"] {
-      padding-right: $form-grid-gutter-width / 2;
-      padding-left: $form-grid-gutter-width / 2;
+      @include rtlize('padding-end', $form-grid-gutter-width / 2);
+      @include rtlize('padding-start', $form-grid-gutter-width / 2);
     }
   }
 }
@@ -67,14 +67,14 @@
       align-items: center;
       justify-content: center;
       width: auto;
-      padding-left: 0;
+      @include rtlize('padding-start', 0);
     }
     .form-check-input {
       position: relative;
       flex-shrink: 0;
       margin-top: 0;
-      margin-right: $form-check-input-margin-x;
-      margin-left: 0;
+      @include rtlize('margin-end', $form-check-input-margin-x);
+      @include rtlize('margin-start', 0);
     }
   }
 }

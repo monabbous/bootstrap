@@ -81,8 +81,8 @@
 
   &.form-control-sm,
   &.form-control-lg {
-    padding-right: 0;
-    padding-left: 0;
+    @include rtlize('padding-end', 0);
+    @include rtlize('padding-start', 0);
   }
 }
 

@@ -88,8 +88,8 @@
 
   @include media-breakpoint-up(sm) {
     padding: 1.5rem;
-    margin-right: 0;
-    margin-left: 0;
+    @include rtlize('margin-end', 0);
+    @include rtlize('margin-start', 0);
     border-width: .2rem;
   }
 
@@ -125,7 +125,7 @@
 .bd-example {
   > svg + svg,
   > img + img {
-    margin-left: .5rem;
+    @include rtlize('margin-start', .5rem);
   }
 }
 
@@ -241,12 +241,12 @@
 }
 
 .bd-content .highlight {
-  margin-right: (-$grid-gutter-width / 2);
-  margin-left: (-$grid-gutter-width / 2);
+  @include rtlize('margin-end', (-$grid-gutter-width / 2));
+  @include rtlize('margin-start', (-$grid-gutter-width / 2));
 
   @include media-breakpoint-up(sm) {
-    margin-right: 0;
-    margin-left: 0;
+    @include rtlize('margin-end', 0);
+    @include rtlize('margin-start', 0);
   }
 }
 

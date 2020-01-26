@@ -1,3 +1,5 @@
+@import "../node_modules/rtlize/scss/rtlize.scss";
+
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
@@ -14,11 +16,11 @@
 
   // The separator between breadcrumbs (by default, a forward-slash: "/")
   + .breadcrumb-item {
-    padding-left: $breadcrumb-item-padding-x;
+    @include rtlize('padding-start', $breadcrumb-item-padding-x);
 
     &::before {
       display: inline-block; // Suppress underlining of the separator in modern browsers
-      padding-right: $breadcrumb-item-padding-x;
+      @include rtlize('padding-end', $breadcrumb-item-padding-x);
       color: $breadcrumb-divider-color;
       content: escape-svg($breadcrumb-divider);
     }
