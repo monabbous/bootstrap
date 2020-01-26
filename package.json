@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap",
+  "name": "bootstrap-rtlized",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
   "version": "4.3.1",
   "version_short": "4.3",
@@ -10,12 +10,11 @@
     "responsive",
     "front-end",
     "framework",
-    "web"
+    "web",
+    "rtl"
   ],
-  "homepage": "https://getbootstrap.com/",
-  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
+  "author": "Mohamed Nabbous",
   "contributors": [
-    "Twitter, Inc."
   ],
   "scripts": {
     "start": "npm-run-all --parallel watch docs-serve",
@@ -76,16 +75,9 @@
   "module": "dist/js/bootstrap.esm.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap.git"
-  },
-  "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "git+https://github.com/monabbous/bootstrap-rtlized.git"
   },
   "license": "MIT",
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/bootstrap"
-  },
   "dependencies": {
     "rtlize": "^1.0.0"
   },
