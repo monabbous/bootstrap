@@ -1,4 +1,4 @@
-@import "../../node_modules/rtlize/scss/rtlize.scss";
+@import "~rtlize";
 
 // Utility generator
 // Used to generate utilities & print utilities
@@ -32,11 +32,11 @@
       @each $property in $properties {
 
         @if (str-index($property, '-right')) {
-          @include rtlize(str-replace($property, 'end', 'end'), $value);
+          @include rtlize(str-replace($property, 'right', 'end'), $value);
         }
 
         @else if (str-index($property, '-left')) {
-          @include rtlize(str-replace($property, 'start', 'start'), $value);
+          @include rtlize(str-replace($property, 'left', 'start'), $value);
         }
 
         @else {

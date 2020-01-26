@@ -14,8 +14,7 @@
     "rtl"
   ],
   "author": "Mohamed Nabbous",
-  "contributors": [
-  ],
+  "contributors": [],
   "scripts": {
     "start": "npm-run-all --parallel watch docs-serve",
     "bundlesize": "bundlesize",
@@ -79,7 +78,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "rtlize": "^1.0.0"
+    "rtlize": "^1.0.0-a"
   },
   "peerDependencies": {
     "popper.js": "^1.16.0"

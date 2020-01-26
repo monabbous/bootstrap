@@ -1,7 +1,7 @@
 //
 // Headings
 //
-@import "../node_modules/rtlize/scss/rtlize.scss";
+@import "~rtlize";
 
 .h1 {
   @extend h1;
